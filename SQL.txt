@@ -1,0 +1,37 @@
+MySQL
+SELECT * 
+FROM table_name
+LIMIT 10;
+
+Oracle
+SELECT *
+FROM table_name
+FETCH FIRST 10 ROWS ONLY;
+
+Returns only rows that have matching values in both tables
+SELECT e.employee_id, e.name, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
+
+Returns all rows from the left table, and only the matched rows from the right table
+SELECT e.employee_id, e.name, d.department_name
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
+
+Returns all rows from the right table, and only the matched rows from the left table
+SELECT e.employee_id, e.name, d.department_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+
+Returns all rows when there is a match in either the left or right table
+SELECT e.employee_id, e.name, d.department_name
+FROM employees e
+FULL OUTER JOIN departments d
+ON e.department_id = d.department_id;
+
+SELECT *
+FROM employees
+CROSS JOIN departments;
